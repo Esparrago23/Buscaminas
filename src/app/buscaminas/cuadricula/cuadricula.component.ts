@@ -13,7 +13,7 @@ export class CuadriculaComponent {
   creacionCuadricula(): void {
       this.matrix = [];
       const totalCuadritos = this.tamanoCuadricula * this.tamanoCuadricula;
-      const cantidadMinas = Math.floor(totalCuadritos / 2);
+      const cantidadMinas = Math.floor(this.tamanoCuadricula);
       const cuadritos = new Array(totalCuadritos).fill(0);
 
       for (let i = 0; i < cantidadMinas; i++) {
