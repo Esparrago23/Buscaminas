@@ -1,0 +1,18 @@
+<div>
+    <form (ngSubmit)="creacionCuadricula()">
+        <label>Ingresa la cantidad de cuadriculas</label>
+        <input type="number" name="cantidad cuadriculas" [(ngModel)]="tamanoCuadricula" required>
+        <button type="submit">crear</button>
+    </form>
+    <label>!si quieres volver a jugar presiona el boton¡ </label>
+</div>
+
+<table class="tabla" *ngIf="matrix && matrix.length > 0">
+    <tr *ngFor="let row of matrix; let i = index">
+        <td *ngFor="let value of row; let j = index">
+            <button class="btn" (click)="toggleMostrar(i, j)">
+                {{ mostrarValor(i, j) ? value : '' }}
+            </button>
+        </td>
+    </tr>
+</table>
